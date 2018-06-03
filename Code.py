@@ -6,7 +6,7 @@ class player(object):
         self.amount += addition
 class dstrb(object):
 	def __init__(self):
-		self.l = 0
+		self.l = ''
 		self.t = 0
 		self.f = 0
 	def distribution(self):
@@ -60,20 +60,19 @@ class dstrb(object):
 		player1 = player(amnt)
 		print("How much do you want to bid?")
 		bid = int(input("Please enter your bid amount"))
-		s = dstrb()
-		s.distribution()
-		s.reveal()
-		s.play()
+		self.distribution()
+		self.reveal()
+		self.play()
 		if str(self.l).upper().startswith('H'):
-			s.hit()
+			print("Gonna hit");
+			self.hit()
 		if str(self.l).upper().startswith('S'):
-			s.stand()
-		s.check()
+			self.stand()
+		self.check()
 		if self.f == 1:
 			player1.amount += bid
 		elif self.f == 0:
 			player1.amount -= bid
 		print(player1.amount)
 o = dstrb()
-print(o.l);
 o.winner()
